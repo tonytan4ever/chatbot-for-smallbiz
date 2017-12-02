@@ -6,3 +6,6 @@ Modules:
 1. Finance
 2. Management
 3. Workflow automation
+	* Order placement
+	* Report generation
+	* Production helper?
