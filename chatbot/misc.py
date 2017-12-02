@@ -6,7 +6,6 @@ import requests
 from slackbot import bot, settings
 
 from . import utils
-from SystemEvents.Text_Suite import attachment
 
 
 @bot.listen_to('Good morning chatbot|GM chatbot', flags=re.IGNORECASE)
