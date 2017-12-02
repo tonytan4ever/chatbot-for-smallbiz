@@ -1,0 +1,25 @@
+[
+    {% for account in accounts %}
+    {
+        "fallback": "Balance {{ account.get('acct_num') }}",
+        "fields": [
+                {
+                    "title": "Balance",
+                    "value": "{{ account.get('balance') }}",
+                    "short": true
+                },
+                {
+                    "title": "Acc Type",
+                    "value": "{{ account.get('acct_type') }}",
+                    "short": true
+                },
+                {
+                    "title": "Acc Number",
+                    "value": "{{ account.get('acct_num') }}",
+                    "short": true
+                }
+         ],
+         "color": "#F35A00"
+    },
+    {% endfor %}
+]
