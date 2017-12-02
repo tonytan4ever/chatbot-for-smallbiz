@@ -1,0 +1,190 @@
+{
+  "Status": {
+    "StatusCode": "",
+    "Severity": "",
+    "StatusDescription": ""
+  },
+  "AccessibleAccountDetailList": [{
+    "_id": "59d95d27721ae2944407e240",
+    "OperatingCompanyIdentifier": "642",
+    "ProductCode": "BCD",
+    "PrimaryIdentifier": "00000004718240071486366",
+    "LegalParticipantIdentifier": "913996201744144603",
+    "BasicAccountDetail": {
+      "Balances": {
+        "AccessibleBalanceAmount": "0.0",
+        "InvestmentBalanceAmount": "0.0",
+        "CreditAvailableBalanceAmount": "0.0",
+        "PayoffBalanceAmount": "0.0",
+        "AvailableBalanceAmount": "49945.0",
+        "CurrentBalanceAmount": "0.0"
+      },
+      "Codes": {
+        "StatusDescription": "OPEN",
+        "AccountStatusCode": "99",
+        "SubProductCode": "AO",
+        "RelationshipCode": "INO",
+        "CategoryDescription": "CR CARD",
+        "CategoryCode": "CCRD"
+      },
+      "RedactedAccountNumber": "*******471824******6366",
+      "BranchIdentifier": "907"
+    }
+  }, {
+    "_id": "59d95d27721ae2944407e241",
+    "OperatingCompanyIdentifier": "52",
+    "ProductCode": "CCD",
+    "PrimaryIdentifier": "00000004037670240271147",
+    "LegalParticipantIdentifier": "913996201744144603",
+    "BasicAccountDetail": {
+      "Balances": {
+        "AccessibleBalanceAmount": "0.0",
+        "InvestmentBalanceAmount": "0.0",
+        "CreditAvailableBalanceAmount": "0.0",
+        "PayoffBalanceAmount": "4592.28",
+        "AvailableBalanceAmount": "0.0",
+        "CurrentBalanceAmount": "4592.28"
+      },
+      "Codes": {
+        "StatusDescription": "OPEN",
+        "AccountStatusCode": "99",
+        "SubProductCode": "D7",
+        "RelationshipCode": "IND",
+        "CategoryDescription": "CR CARD",
+        "CategoryCode": "CCRD"
+      },
+      "RedactedAccountNumber": "*******403767******1147",
+      "BranchIdentifier": "907"
+    }
+  }, {
+    "_id": "59d95d2a721ae2944407e246",
+    "OperatingCompanyIdentifier": "300",
+    "ProductCode": "CCD",
+    "PrimaryIdentifier": "00000000000104778493791",
+    "LegalParticipantIdentifier": "913996201744144603",
+    "BasicAccountDetail": {
+      "Balances": {
+        "AccessibleBalanceAmount": "5304.74",
+        "InvestmentBalanceAmount": "0.0",
+        "CreditAvailableBalanceAmount": "0.0",
+        "PayoffBalanceAmount": "0.0",
+        "AvailableBalanceAmount": "5304.74",
+        "CurrentBalanceAmount": "5304.74"
+      },
+      "Codes": {
+        "StatusDescription": "INACTIVE",
+        "AccountStatusCode": "03",
+        "SubProductCode": "MN",
+        "RelationshipCode": "JOO",
+        "CategoryDescription": "CHECKING",
+        "CategoryCode": "CHCK"
+      },
+      "RedactedAccountNumber": "*******000010******3791",
+      "BranchIdentifier": "262"
+    }
+  }, {
+    "_id": "59d95d2e721ae2944407e24c",
+    "OperatingCompanyIdentifier": "448",
+    "ProductCode": "DDA",
+    "PrimaryIdentifier": "00000000000151701798143",
+    "LegalParticipantIdentifier": "913996201744144603",
+    "BasicAccountDetail": {
+      "Balances": {
+        "AccessibleBalanceAmount": "134921.77",
+        "InvestmentBalanceAmount": "0.0",
+        "CreditAvailableBalanceAmount": "0.0",
+        "PayoffBalanceAmount": "0.0",
+        "AvailableBalanceAmount": "126821.76",
+        "CurrentBalanceAmount": "126821.76"
+      },
+      "Codes": {
+        "StatusDescription": "OPEN",
+        "AccountStatusCode": "99",
+        "SubProductCode": "GS",
+        "RelationshipCode": "IND",
+        "CategoryDescription": "CHECKING",
+        "CategoryCode": "CHCK"
+      },
+      "RedactedAccountNumber": "*******000015******8143",
+      "BranchIdentifier": "262"
+    }
+  }, {
+    "_id": "59d95d30721ae2944407e24f",
+    "OperatingCompanyIdentifier": "52",
+    "ProductCode": "EXL",
+    "PrimaryIdentifier": "00000004037670174120740",
+    "LegalParticipantIdentifier": "913996201744144603",
+    "BasicAccountDetail": {
+      "Balances": {
+        "AccessibleBalanceAmount": "0.0",
+        "InvestmentBalanceAmount": "0.0",
+        "CreditAvailableBalanceAmount": "7100.01",
+        "PayoffBalanceAmount": "-0.01",
+        "AvailableBalanceAmount": "7100.01",
+        "CurrentBalanceAmount": "-0.01"
+      },
+      "Codes": {
+        "StatusDescription": "OPEN",
+        "AccountStatusCode": "99",
+        "SubProductCode": "PL",
+        "RelationshipCode": "IND",
+        "CategoryDescription": "CR LINE",
+        "CategoryCode": "CLNE"
+      },
+      "RedactedAccountNumber": "*******403767******0740",
+      "BranchIdentifier": "907"
+    }
+  }, {
+    "_id": "59d95d30721ae2944407e250",
+    "OperatingCompanyIdentifier": "454",
+    "ProductCode": "INV",
+    "PrimaryIdentifier": "00000000000000025353723",
+    "LegalParticipantIdentifier": "913996201744144603",
+    "BasicAccountDetail": {
+      "Balances": {
+        "AccessibleBalanceAmount": "0.0",
+        "InvestmentBalanceAmount": "0.0",
+        "CreditAvailableBalanceAmount": "0.0",
+        "PayoffBalanceAmount": "0.0",
+        "AvailableBalanceAmount": "0.0",
+        "CurrentBalanceAmount": "0.0"
+      },
+      "Codes": {
+        "StatusDescription": "OPEN",
+        "AccountStatusCode": "99",
+        "SubProductCode": "NR",
+        "RelationshipCode": "IND",
+        "CategoryDescription": "SUNDRY ACC",
+        "CategoryCode": "OTHR"
+      },
+      "RedactedAccountNumber": "*******000000******3723",
+      "BranchIdentifier": "9406"
+    }
+  }, {
+    "_id": "59d95d32721ae2944407e253",
+    "OperatingCompanyIdentifier": "448",
+    "ProductCode": "LOC",
+    "PrimaryIdentifier": "00000000000151701798143",
+    "LegalParticipantIdentifier": "913996201744144603",
+    "BasicAccountDetail": {
+      "Balances": {
+        "AccessibleBalanceAmount": "0.0",
+        "InvestmentBalanceAmount": "0.0",
+        "CreditAvailableBalanceAmount": "0.0",
+        "PayoffBalanceAmount": "0.0",
+        "AvailableBalanceAmount": "1000.0",
+        "CurrentBalanceAmount": "0.0"
+      },
+      "Codes": {
+        "StatusDescription": "OPEN",
+        "AccountStatusCode": "99",
+        "SubProductCode": "PL",
+        "RelationshipCode": "IND",
+        "CategoryDescription": "CR LINE",
+        "CategoryCode": "CLNE"
+      },
+      "RedactedAccountNumber": "*******000015******8143",
+      "BranchIdentifier": "2601"
+    }
+  }]
+}

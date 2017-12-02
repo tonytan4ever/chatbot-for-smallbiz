@@ -1,4 +1,5 @@
 import logging
+import os
 import sys
 
 
@@ -13,9 +14,11 @@ STARTING_MESSAGE = "Starting Chatbot..."
 
 PLUGINS = [
     'chatbot.pay_invoices',
+    'chatbot.balances',
     'chatbot.misc',
 ]
 
+BOT_ROOT_DIR = os.path.dirname(__file__)
 
 DEBUG = True
 
