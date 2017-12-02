@@ -1,9 +1,12 @@
 import datetime
+import json
 import re
 
-from slackbot import bot
+import requests
+from slackbot import bot, settings
 
 from . import utils
+from SystemEvents.Text_Suite import attachment
 
 
 @bot.listen_to('Good morning chatbot|GM chatbot', flags=re.IGNORECASE)
@@ -25,3 +28,15 @@ def greeting_DM_to_user(message):
     utils.direct_reply_to_message(
         message,
         'Hello %s, you asked me to DM you' % user_name_from_message)
+
+
+@bot.listen_to('render this', flags=re.IGNORECASE)
+def render_this(message):
+    json_block = requests.get(message.body['file']['url_private_download'],
+                              headers=dict(Authorization="Bearer %s" % settings.API_TOKEN)).text
+    try:
+        json.loads(json_block)
+    except Exception:
+        message.reply("This is not a valid json block/No json uploaded")
+    else:
+        message.send_webapi("rendered this:", attachments=json_block)
