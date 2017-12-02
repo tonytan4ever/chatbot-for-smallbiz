@@ -23,7 +23,6 @@ def balances(message):
 
         accounts.append(account_details)
 
-    import pdb; pdb.set_trace()
     message.reply_webapi(
         "Accounts Info",
         attachments=utils.j2_env.get_template('account_info').render(**{'accounts': accounts}))
