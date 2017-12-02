@@ -2,14 +2,19 @@ import logging
 import sys
 
 
-API_TOKEN = "<your_API_token>"
+API_TOKEN = ""
 
 DEFAULT_REPLY = ("I don't know how to help small business when you "
                  "talk like this")
 
 ERRORS_TO = 'chatbot_for_small_biz'
 
-STARTING_MESSAGE = "Starting Chatbot"
+STARTING_MESSAGE = "Starting Chatbot..."
+
+PLUGINS = [
+    'chatbot.pay_invoices',
+    'chatbot.misc',
+]
 
 
 DEBUG = True
