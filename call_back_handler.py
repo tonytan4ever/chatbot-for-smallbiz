@@ -1,16 +1,22 @@
 import json
 import os
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import requests
+from slackclient import SlackClient
 
 import slackbot_settings
 
 
 clientId = '280860704740.280949647332'
 clientSecret = 'fd0ab6493feda3b5efcc78852bd2d6f9'
+# Your app's Slack bot user token
+SLACK_BOT_TOKEN = "xoxb-280393686641-nR5MmhB9xxjW3X2t6Qbzh7QQ"
 
-app = Flask('SlackReceiver', template_dir=os.path.join(
+# Slack client for Web API requests
+slack_client = SlackClient(SLACK_BOT_TOKEN)
+
+app = Flask('SlackReceiver', template_folder=os.path.join(
         slackbot_settings.ROOT_DIR,
         'chatbot',
         'templates'
@@ -44,18 +50,49 @@ def handle_events():
         challenge = request.json.get(u'challenge')
         return challenge
     elif body['type'] == 'event_callback':
+        slack_client.api_call(
+          "chat.postMessage",
+          channel=body['event']['channel'],
+          text="Hello, My name is Charles, and I help get your business affairs in order. By connecting your business card accounts, I am able to remind you, pay bills and invoices, and tell you a bunch of business things. Just try it, connect your Visa bank account by entering in the card information",
+          attachments=render_template('account_add')
+        )
 
-        return "%user joined..." % body['event']['user']
+        return "%s joined..." % body['event']['user']
     else:
         return jsonify({"Error": "Unknown event type"}), 500
 
 
 @app.route('/slack/message', methods=['POST'])
 def incoming_slack_message():
-    req = request.get_json()
-    print req
-    # .. do something with the req ..
-    return 'action successful'
+    payload = json.loads(request.form['payload'])
+    callback_id = payload['callback_id']
+    channel = payload['channel']['id']
+    if callback_id == 'wopr_bank':
+        if payload['actions'][0]['value'] == 'add':
+            slack_client.api_call(
+                 "chat.postMessage",
+                 channel=channel,
+                 text='Follow up question',
+                 attachments=render_template('another_account')
+            )
+        return 'Perfect, would you like me to learn another account'
+    elif callback_id == 'wopr_bank_2':
+        if payload['actions'][0]['value'] == 'no':
+            slack_client.api_call(
+                 "chat.postMessage",
+                 channel=channel,
+                 text='Follow up question',
+                 attachments=render_template('main_menu')
+            )
+
+        return 'Great, here are some suggestions how I can assist'
+    elif callback_id == 'confirm_invoice_payment':
+        if payload['actions'][0]['value']:
+            return 'All done. Your remaining balance is 2007.01'
+        else:
+            return "Okay, skip paying for now"
+    else:
+        return "Error", 500
 
 
 @app.route('/slack/options', methods=['POST', 'OPTIONS'])

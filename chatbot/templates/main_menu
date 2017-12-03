@@ -1,0 +1,30 @@
+[
+       {
+            "title": "",
+            "text": "",
+            "fallback": "",
+            "callback_id": "main_menu",
+            "color": "#3AA3E3 ",
+            "attachment_type": "default",
+            "actions": [
+                {
+                    "name": "pay_invoices",
+                    "text": "Pay Invoices",
+                    "type": "button",
+                    "value": "pay_invoices"
+                },
+                {
+                    "name": "show_balances",
+                    "text": "Show Balances",
+                    "type": "button",
+                    "value": "show_balances"
+                },
+                {
+                    "name": "check_unpaid_invoices",
+                    "text": "Check Unpaid Invoices",
+                    "type": "button",
+                    "value": "check_unpaid_invoices"
+                }
+            ]
+        }
+    ]

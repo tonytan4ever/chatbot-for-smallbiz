@@ -3,7 +3,7 @@ import os
 import sys
 
 
-API_TOKEN = ""
+API_TOKEN = "xoxb-280393686641-nR5MmhB9xxjW3X2t6Qbzh7QQ"
 
 DEFAULT_REPLY = ("I don't know how to help small business when you "
                  "talk like this")

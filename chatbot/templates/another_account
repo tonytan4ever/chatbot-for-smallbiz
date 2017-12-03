@@ -1,25 +1,24 @@
 [
-        {
-            "title": "Bank Account Form",
-            "text": "Link Bank Account",
+	{
+            "title": "Follow up question",
+            "text": "Add another account",
             "fallback": "Please choose a valid account",
-            "callback_id": "wopr_bank",
+            "callback_id": "wopr_bank_2",
             "color": "#3AA3E3 ",
             "attachment_type": "default",
             "actions": [
                 {
                     "name": "addbank",
                     "text": "Add Bank Account",
-                    "style": "primary",
                     "type": "button",
-                    "value": "add"
+                    "value": "yes"
                 },
                 {
                     "name": "cancelbank",
                     "text": "Not Right Now",
                     "type": "button",
-                    "value": "cancel"
+                    "value": "no"
                 }
             ]
         }
-    ]
+]
