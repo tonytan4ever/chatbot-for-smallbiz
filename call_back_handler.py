@@ -7,6 +7,7 @@ from slackclient import SlackClient
 
 import slackbot_settings
 
+from chatbot import utils
 
 clientId = '280860704740.280949647332'
 clientSecret = 'fd0ab6493feda3b5efcc78852bd2d6f9'
@@ -89,7 +90,8 @@ def incoming_slack_message():
         return 'Great, here are some suggestions how I can assist'
     elif callback_id == 'confirm_invoice_payment':
         if payload['actions'][0]['value']:
-            return 'All done. Your remaining balance is 2007.01'
+            total_cost = 2007.01
+            utils.pay_last_invoice(total_cost)
         else:
             return "Okay, skip paying for now"
     elif callback_id == 'schedule_visa_payment':
