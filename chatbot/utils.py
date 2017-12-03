@@ -104,3 +104,27 @@ def template_data_account_info(account_info):
         accounts.append(account_details)
 
     return accounts
+
+
+def pay_last_invoice(total_cost):
+    """
+    :param total_cost: total amount to pay-off for the voice
+    :type total_cost: Float
+    :return:
+    """
+    account_info = get_account_info()
+    account = account_info['AccessibleAccountDetailList'][0]
+    available_balance = float(account['BasicAccountDetail']['Balances']['AvailableBalanceAmount'])
+    new_balance = (available_balance - float(total_cost))
+    if available_balance <= 0 or new_balance <= 0:
+        return "Insufficient funds to pay last invoice."
+
+    account['BasicAccountDetail']['Balances']['AvailableBalanceAmount'] = (
+            available_balance - float(total_cost))
+
+    # save data
+    account_info['AccessibleAccountDetailList'][0] = account
+    cache_set('account_info', json.dumps(account_info))
+
+    return 'All done. After paying ${0}, your remaining balance is {1}'.format(
+        total_cost, new_balance)
