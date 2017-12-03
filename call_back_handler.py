@@ -94,6 +94,12 @@ def incoming_slack_message():
             return "Okay, skip paying for now"
     elif callback_id == 'schedule_visa_payment':
         if payload['actions'][0]['value']:
+            slack_client.api_call(
+                 "chat.postMessage",
+                 channel=channel,
+                 text='Here are more suggestions how I can assist',
+                 attachments=render_template('main_menu')
+            )
             return 'All done. Visa payment has been scheduled'
         else:
             slack_client.api_call(

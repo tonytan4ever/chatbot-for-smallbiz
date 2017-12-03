@@ -1,6 +1,6 @@
 [
 	{
-            "text": "Would you like to schedule a payment for your Visa bill next wweek",
+            "text": "Would you like to schedule a payment for your Visa bill due next week",
             "fallback": "If you see this something is wrong",
             "callback_id": "schedule_visa_payment",
             "color": "#3AA3E3 ",
