@@ -33,7 +33,11 @@ def _open_n_get_message_channel_id(message):
 
 
 def get_accounts_info():
-    with open('user908997180284469041accounts.json') as json_file:
+    with open(
+        os.path.join(
+            settings.ROOT_DIR,
+            'chatbot',
+            'user908997180284469041accounts.json')) as json_file:
         data = json.load(json_file)
 
     return data

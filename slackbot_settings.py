@@ -3,7 +3,7 @@ import os
 import sys
 
 
-API_TOKEN = ""
+API_TOKEN = "xoxb-280393686641-2AmN7PhojEljBRNK8Vifjjz3"
 
 DEFAULT_REPLY = ("I don't know how to help small business when you "
                  "talk like this")
@@ -29,3 +29,5 @@ LOGGING_CONF = {
     'level': logging.DEBUG if DEBUG else logging.INFO,
     'stream': sys.stdout,
 }
+
+ROOT_DIR = os.path.dirname(__file__)
