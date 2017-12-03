@@ -5,6 +5,32 @@
     "StatusDescription": ""
   },
   "AccessibleAccountDetailList": [{
+    "_id": "59d95d2e721ae2944407e24c",
+    "OperatingCompanyIdentifier": "448",
+    "ProductCode": "DDA",
+    "PrimaryIdentifier": "00000000000151701798143",
+    "LegalParticipantIdentifier": "913996201744144603",
+    "BasicAccountDetail": {
+      "Balances": {
+        "AccessibleBalanceAmount": "134921.77",
+        "InvestmentBalanceAmount": "0.0",
+        "CreditAvailableBalanceAmount": "0.0",
+        "PayoffBalanceAmount": "0.0",
+        "AvailableBalanceAmount": "126821.76",
+        "CurrentBalanceAmount": "126821.76"
+      },
+      "Codes": {
+        "StatusDescription": "OPEN",
+        "AccountStatusCode": "99",
+        "SubProductCode": "GS",
+        "RelationshipCode": "IND",
+        "CategoryDescription": "CHECKING",
+        "CategoryCode": "CHCK"
+      },
+      "RedactedAccountNumber": "*******000015******8143",
+      "BranchIdentifier": "262"
+    }
+  }, {
     "_id": "59d95d27721ae2944407e240",
     "OperatingCompanyIdentifier": "642",
     "ProductCode": "BCD",
@@ -80,32 +106,6 @@
         "CategoryCode": "CHCK"
       },
       "RedactedAccountNumber": "*******000010******3791",
-      "BranchIdentifier": "262"
-    }
-  }, {
-    "_id": "59d95d2e721ae2944407e24c",
-    "OperatingCompanyIdentifier": "448",
-    "ProductCode": "DDA",
-    "PrimaryIdentifier": "00000000000151701798143",
-    "LegalParticipantIdentifier": "913996201744144603",
-    "BasicAccountDetail": {
-      "Balances": {
-        "AccessibleBalanceAmount": "134921.77",
-        "InvestmentBalanceAmount": "0.0",
-        "CreditAvailableBalanceAmount": "0.0",
-        "PayoffBalanceAmount": "0.0",
-        "AvailableBalanceAmount": "126821.76",
-        "CurrentBalanceAmount": "126821.76"
-      },
-      "Codes": {
-        "StatusDescription": "OPEN",
-        "AccountStatusCode": "99",
-        "SubProductCode": "GS",
-        "RelationshipCode": "IND",
-        "CategoryDescription": "CHECKING",
-        "CategoryCode": "CHCK"
-      },
-      "RedactedAccountNumber": "*******000015******8143",
       "BranchIdentifier": "262"
     }
   }, {

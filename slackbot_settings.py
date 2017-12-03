@@ -31,3 +31,6 @@ LOGGING_CONF = {
 }
 
 ROOT_DIR = os.path.dirname(__file__)
+
+MEMCACHED_SERVERS = ['localhost:11211']
+MEMCACHED_TTL = 60
