@@ -11,7 +11,7 @@ import slackbot_settings
 clientId = '280860704740.280949647332'
 clientSecret = 'fd0ab6493feda3b5efcc78852bd2d6f9'
 # Your app's Slack bot user token
-SLACK_BOT_TOKEN = "<your_api_token>"
+SLACK_BOT_TOKEN = ""
 
 # Slack client for Web API requests
 slack_client = SlackClient(SLACK_BOT_TOKEN)
@@ -50,12 +50,13 @@ def handle_events():
         challenge = request.json.get(u'challenge')
         return challenge
     elif body['type'] == 'event_callback':
-        slack_client.api_call(
-          "chat.postMessage",
-          channel=body['event']['channel'],
-          text="Hello, My name is Charles, and I help get your business affairs in order. By connecting your business card accounts, I am able to remind you, pay bills and invoices, and tell you a bunch of business things. Just try it, connect your Visa bank account by entering in the card information",
-          attachments=render_template('account_add')
-        )
+        if body['event']['user'] != "U88BKL6JV":
+            slack_client.api_call(
+              "chat.postMessage",
+              channel=body['event']['channel'],
+              text="Hello, My name is Charles, and I help get your business affairs in order. By connecting your business card accounts, I am able to remind you, pay bills and invoices, and tell you a bunch of business things. Just try it, connect your Visa bank account by entering in the card information",
+              attachments=render_template('account_add')
+            )
 
         return "%s joined..." % body['event']['user']
     else:
