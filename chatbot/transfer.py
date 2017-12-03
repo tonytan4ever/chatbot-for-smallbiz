@@ -3,7 +3,7 @@ import re
 
 from slackbot import bot
 
-# from . import utils
+from . import utils
 
 
 @bot.respond_to('Can you transfer (\$?[0-9]+(?:\.[0-9][0-9])?) from (\w+) to (\w+)\?', flags=re.IGNORECASE)
@@ -16,7 +16,7 @@ def transfer(message, amount=None, acc_src=None, acc_dest=None):
     :param acc_dest: Destination account
     :return: status of transfer creation request
     """
-    message.reply('Initiating transfer ...')
+    message.send('Initiating transfer ...')
 
     if not all([amount, acc_src, acc_dest]):
         message.reply("I'm sorry I did not understand your request.")
@@ -38,3 +38,6 @@ def transfer(message, amount=None, acc_src=None, acc_dest=None):
     if 'SetUpComplete' in resp_json and resp_json["SetUpComplete"] == 'success':
         message.reply(
             "I have successfully completed the transfer: {0}".format(amount))
+
+    message.reply_webapi("Follow up question:",
+                         attachments=utils.j2_env.get_template('follow_up_transfer').render())

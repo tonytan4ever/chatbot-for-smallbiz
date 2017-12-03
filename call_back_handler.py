@@ -11,7 +11,7 @@ import slackbot_settings
 clientId = '280860704740.280949647332'
 clientSecret = 'fd0ab6493feda3b5efcc78852bd2d6f9'
 # Your app's Slack bot user token
-SLACK_BOT_TOKEN = "xoxb-280393686641-nR5MmhB9xxjW3X2t6Qbzh7QQ"
+SLACK_BOT_TOKEN = "xoxb-280393686641-CHdm21v9oTYAiW1x9RQENUTN"
 
 # Slack client for Web API requests
 slack_client = SlackClient(SLACK_BOT_TOKEN)
@@ -91,6 +91,17 @@ def incoming_slack_message():
             return 'All done. Your remaining balance is 2007.01'
         else:
             return "Okay, skip paying for now"
+    elif callback_id == 'schedule_visa_payment':
+        if payload['actions'][0]['value']:
+            return 'All done. Visa payment has been scheduled'
+        else:
+            slack_client.api_call(
+                 "chat.postMessage",
+                 channel=channel,
+                 text='You good? Or is there any thing else I can help you with?',
+                 attachments=render_template('follow_up_schedule_payment')
+            )
+            return "Okay"
     else:
         return "Error", 500
 
