@@ -15,6 +15,7 @@ STARTING_MESSAGE = "Starting Chatbot..."
 PLUGINS = [
     'chatbot.pay_invoices',
     'chatbot.balances',
+    'chatbot.transfer',
     'chatbot.misc',
 ]
 

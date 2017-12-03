@@ -8,10 +8,10 @@ from . import utils
 
 @bot.respond_to('show balance[s]?', flags=re.IGNORECASE)
 def balances(message):
-    # TODO get bank accounts for a single user
-    # TODO get balances for all bank accounts for that user
-    # TODO format response as attachment in slack
-
+    """
+    :param message: command to initiate balance report
+    :return: an attachment with summary of account status
+    """
     resp_json = utils.get_accounts_info()
     accounts = []
     for account in resp_json['AccessibleAccountDetailList']:
