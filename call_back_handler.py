@@ -90,9 +90,8 @@ def incoming_slack_message():
         return 'Great, here are some suggestions how I can assist'
     elif callback_id == 'confirm_invoice_payment':
         if payload['actions'][0]['value']:
-            total_cost = 2007.01
-            utils.pay_last_invoice(total_cost)
-            return 'Fun Game LLC invoice was paid. Your remaining balance is 2007.01'
+            total_cost = 190.80
+            return utils.pay_last_invoice(total_cost)
         else:
             return "Okay, skip paying for now"
     elif callback_id == 'schedule_visa_payment':
