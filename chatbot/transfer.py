@@ -6,7 +6,7 @@ from slackbot import bot
 from . import utils
 
 
-@bot.respond_to('Can you transfer (\$?[0-9]+(?:\.[0-9][0-9])?) from (\w+) to (\w+)\?', flags=re.IGNORECASE)
+@bot.respond_to('Can you transfer (\$?[0-9]+(?:\.[0-9][0-9])?) from (\w+) to (\w+)[\?]?$', flags=re.IGNORECASE)
 def transfer(message, amount=None, acc_src=None, acc_dest=None):
     """
 
