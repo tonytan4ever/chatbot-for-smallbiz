@@ -35,6 +35,6 @@ def pay_invoice_handler(message):
             ]
         }
     ]
-    message.reply_webapi("Okay, your next invoice with FunGame LLC is $190.80m, "
-                         "Confirm payment ?", 
+    message.reply_webapi("Okay, your next invoice with FunGame LLC is $190.80, "
+                         "Confirm payment ?",
                          attachments=json.dumps(resp))

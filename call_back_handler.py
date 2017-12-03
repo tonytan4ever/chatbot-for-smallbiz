@@ -12,7 +12,7 @@ from chatbot import utils
 clientId = '280860704740.280949647332'
 clientSecret = 'fd0ab6493feda3b5efcc78852bd2d6f9'
 # Your app's Slack bot user token
-SLACK_BOT_TOKEN = ""
+SLACK_BOT_TOKEN = "xoxb-280393686641-LnEasPmM6cJrWLMQYNHwGL64"
 
 # Slack client for Web API requests
 slack_client = SlackClient(SLACK_BOT_TOKEN)
@@ -77,7 +77,7 @@ def incoming_slack_message():
                  text='Follow up question',
                  attachments=render_template('another_account')
             )
-        return 'Perfect, would you like me to learn another account'
+        return 'Perfect, I added Bilal\'s business account'
     elif callback_id == 'wopr_bank_2':
         if payload['actions'][0]['value'] == 'no':
             slack_client.api_call(
@@ -92,6 +92,7 @@ def incoming_slack_message():
         if payload['actions'][0]['value']:
             total_cost = 2007.01
             utils.pay_last_invoice(total_cost)
+            return 'Fun Game LLC invoice was paid. Your remaining balance is 2007.01'
         else:
             return "Okay, skip paying for now"
     elif callback_id == 'schedule_visa_payment':
