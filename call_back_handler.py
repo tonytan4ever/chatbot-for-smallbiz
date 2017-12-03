@@ -11,7 +11,7 @@ import slackbot_settings
 clientId = '280860704740.280949647332'
 clientSecret = 'fd0ab6493feda3b5efcc78852bd2d6f9'
 # Your app's Slack bot user token
-SLACK_BOT_TOKEN = "xoxb-280393686641-CHdm21v9oTYAiW1x9RQENUTN"
+SLACK_BOT_TOKEN = "<your_api_token>"
 
 # Slack client for Web API requests
 slack_client = SlackClient(SLACK_BOT_TOKEN)
