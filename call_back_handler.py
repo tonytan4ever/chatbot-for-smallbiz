@@ -1,13 +1,20 @@
 import json
+import os
 
 from flask import Flask, request, jsonify
 import requests
+
+import slackbot_settings
 
 
 clientId = '280860704740.280949647332'
 clientSecret = 'fd0ab6493feda3b5efcc78852bd2d6f9'
 
-app = Flask('SlackReceiver')
+app = Flask('SlackReceiver', template_dir=os.path.join(
+        slackbot_settings.ROOT_DIR,
+        'chatbot',
+        'templates'
+    ))
 
 
 @app.route('/')
@@ -28,6 +35,19 @@ def oauth_handler():
                                  'client_secret': clientSecret
                             })
         return resp.text
+
+
+@app.route('/events', methods=['POST'])
+def handle_events():
+    body = request.json
+    if body['type'] == 'url_verification':
+        challenge = request.json.get(u'challenge')
+        return challenge
+    elif body['type'] == 'event_callback':
+
+        return "%user joined..." % body['event']['user']
+    else:
+        return jsonify({"Error": "Unknown event type"}), 500
 
 
 @app.route('/slack/message', methods=['POST'])
